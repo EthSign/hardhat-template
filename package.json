@@ -1,0 +1,64 @@
+{
+  "name": "@boyuanx/jx-solidity-template",
+  "version": "0.0.1",
+  "description": "Everything you need for creating Solidity smart contract with TypeScript testing",
+  "license": "Apache-2.0",
+  "private": false,
+  "directories": {
+    "test": "test"
+  },
+  "publishConfig": {
+    "tag": "latest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boyuanx/jx-solidity-template"
+  },
+  "keywords": [
+    "solidity",
+    "ethereum",
+    "developer-tools"
+  ],
+  "scripts": {
+    "build": "hardhat compile",
+    "clean": "hardhat clean",
+    "format": "npm run format-ts && npm run format-sol",
+    "format-sol": "prettier --ignore-unknown --write \"contracts/*.sol\"",
+    "format-ts": "prettier --ignore-unknown --write \"**/*.ts\"",
+    "lint": "npm run lint-ts && npm run lint-sol",
+    "lint-ts": "eslint . --ext .ts",
+    "lint-sol": "solhint ./contracts/**/*.sol",
+    "prepare": "husky install",
+    "test": "hardhat test",
+    "storage": "hardhat check",
+    "sizes": "hardhat size-contracts"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "3.0.0",
+    "@openzeppelin/contracts": "5.0.0",
+    "@openzeppelin/contracts-upgradeable": "5.0.0",
+    "@openzeppelin/hardhat-upgrades": "2.3.3",
+    "@types/bunyan": "^1.8.7",
+    "@types/chai-as-promised": "7.1.7",
+    "@types/node": "20.8.7",
+    "@typescript-eslint/eslint-plugin": "6.8.0",
+    "@typescript-eslint/parser": "6.8.0",
+    "chai-as-promised": "7.1.1",
+    "eslint": "8.52.0",
+    "eslint-config-prettier": "9.0.0",
+    "eslint-plugin-prettier": "5.0.1",
+    "hardhat": "2.18.2",
+    "hardhat-contract-sizer": "2.10.0",
+    "hardhat-storage-layout": "0.1.7",
+    "husky": "8.0.3",
+    "lint-staged": "15.0.2",
+    "prettier": "3.0.3",
+    "prettier-plugin-solidity": "1.1.3",
+    "solhint": "3.6.2",
+    "ts-node": "10.9.1",
+    "typescript": "5.2.2"
+  },
+  "dependencies": {
+    "bunyan": "^1.8.15"
+  }
+}

@@ -2,6 +2,7 @@ import '@nomicfoundation/hardhat-toolbox'
 import '@openzeppelin/hardhat-upgrades'
 import 'hardhat-storage-layout'
 import 'hardhat-contract-sizer'
+import 'hardhat-deploy'
 
 export default {
     contractSizer: {
@@ -32,5 +33,10 @@ export default {
                 }
             }
         ]
+    },
+    namedAccounts: {
+        deployer: {
+            default: 0
+        }
     }
 }

@@ -3,6 +3,11 @@ import '@openzeppelin/hardhat-upgrades'
 import 'hardhat-storage-layout'
 import 'hardhat-contract-sizer'
 import 'hardhat-deploy'
+import {config} from 'dotenv'
+
+if (process.env.NODE_ENV !== 'PRODUCTION') {
+    config()
+}
 
 export default {
     contractSizer: {
@@ -19,6 +24,14 @@ export default {
             chainId: 33133,
             allowUnlimitedContractSize: false,
             loggingEnabled: true
+        },
+        polygonMumbai: {
+            url: 'https://rpc.ankr.com/polygon_mumbai',
+            chainId: 80001,
+            loggingEnabled: true,
+            accounts: [process.env.PRIVATE_KEY!],
+            saveDeployments: true,
+            zksync: false
         }
     },
     solidity: {
@@ -37,6 +50,11 @@ export default {
     namedAccounts: {
         deployer: {
             default: 0
+        }
+    },
+    etherscan: {
+        apiKey: {
+            polygonMumbai: process.env.POLYGONSCAN_KEY
         }
     }
 }

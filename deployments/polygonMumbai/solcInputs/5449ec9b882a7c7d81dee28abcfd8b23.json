@@ -1,0 +1,35 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "contracts/SimpleStorage.sol": {
+      "content": "// SPDX-License-Identifier: UNLICENSED\npragma solidity ^0.8.20;\n\ncontract SimpleStorage {\n    string public data;\n\n    event DidSetData(string data);\n\n    function setData(string calldata data_) external {\n        data = data_;\n        emit DidSetData(data);\n    }\n}\n"
+    }
+  },
+  "settings": {
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "evmVersion": "paris",
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "evm.methodIdentifiers",
+          "metadata",
+          "storageLayout",
+          "devdoc",
+          "userdoc",
+          "evm.gasEstimates",
+          "storageLayout"
+        ],
+        "": ["ast"]
+      }
+    },
+    "metadata": {
+      "useLiteralContent": true
+    }
+  }
+}

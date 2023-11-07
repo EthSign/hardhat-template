@@ -1,5 +1,4 @@
 import '@nomicfoundation/hardhat-toolbox'
-import '@openzeppelin/hardhat-upgrades'
 import 'hardhat-storage-layout'
 import 'hardhat-contract-sizer'
 import 'hardhat-deploy'
@@ -29,7 +28,7 @@ export default {
             url: 'https://rpc.ankr.com/polygon_mumbai',
             chainId: 80001,
             loggingEnabled: true,
-            accounts: [process.env.PRIVATE_KEY!],
+            accounts: [process.env.PRIVATE_KEY],
             saveDeployments: true,
             zksync: false
         }

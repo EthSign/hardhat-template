@@ -19,16 +19,7 @@ Start by cloning the git repo locally.
 To retrieve the project dependencies and before any further tasks will run correctly.
 
 ```shell
-bun install --frozen-lockfile
-```
-
-#### Husky Git Commit Hooks
-
-To enable Husky commit hooks to trigger the lint-staged behaviour of formatting and linting the staged files prior
-before committing, prepare your repo with `prepare`.
-
-```shell
-npm run prepare
+pnpm i
 ```
 
 #### Build and Test

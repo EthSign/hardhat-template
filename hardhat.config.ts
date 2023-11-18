@@ -38,6 +38,10 @@ export default {
             {
                 version: '0.8.20',
                 settings: {
+                    metadata: {
+                        // Avoid unpredictable metadata hash
+                        bytecodeHash: 'none'
+                    },
                     optimizer: {
                         enabled: true,
                         runs: 200
